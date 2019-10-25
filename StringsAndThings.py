@@ -57,3 +57,18 @@ if "y" in name:
     print("The letter y is in name")
 else:
     print("The letter y in not in name")
+
+ # String Methods to investigate:
+    # Method        Use Example         Explanation
+    # center        aStr.center(w)      It returns a string padded with the fillchar (a padding character) and it doesn't change the original string.
+    # ljust         aStr.ljust(w)       The function left aligns the string according to the width and fills the leftover space of line with blank space.
+    # rjust         aStr.rjust(w)       This string method gives back a new string of a certain length after substituting a given character in left side of the first string.
+    # upper         aStr.upper()        It changes all the lowercase letters to uppercase letters.
+    # lower         aStr.lower()        It changes all the uppercase letters to lowercase letters.
+    # index         aStr.index(item)    It looks for original elements from the beginning of the list and brings the lowest index back to there.
+    # rindex        aStr.rindex(item)   It brings back the highest index of the substring inside of the string.
+    # find          aStr.find(item)     The string method returns an integer value.
+    # rfind         aStr.rfind(item)    It brings back the highest index of the substring.
+    # replace       aStr.replace(old, new)      It brings back the copy of a string and replaces it with another substring.
+
+    # Be sure to include multiple examples of all of them in use
