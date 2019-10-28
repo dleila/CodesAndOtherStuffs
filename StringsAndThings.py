@@ -69,6 +69,14 @@ else:
     # rindex        aStr.rindex(item)   It brings back the highest index of the substring inside of the string.
     # find          aStr.find(item)     The string method returns an integer value.
     # rfind         aStr.rfind(item)    It brings back the highest index of the substring.
-    # replace       aStr.replace(old, new)      It brings back the copy of a string and replaces it with another substring.
+    # replace       aStr.replace(old, new)      It brings back the copy of an old string and replaces it with a new substring.
 
-    # Be sure to include multiple examples of all of them in use
+# Be sure to include multiple examples of all of them in use
+
+# Character Functions
+
+print(ord('5'))
+
+print(chr(97+13))
+
+print(str(12548))
