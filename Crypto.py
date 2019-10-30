@@ -16,7 +16,6 @@ def scramble2Encrypt(plainText):
     cipherText = oddChars + evenChars
     return cipherText
 
-
 def scramble2Decrypt(cipherText):
     halfLength = len(cipherText) // 2
     evenChars = cipherText[halfLength:]
@@ -34,6 +33,9 @@ def scramble2Decrypt(cipherText):
 
 
 def encryptMessage():
-    msg = input("Enter the message to encrypt: ")
+    msg = input("Enter the message to encrypt:")
     cipherText = scramble2Encrypt(msg)
     print("The encrypted message is:", cipherText)
+
+# write a caesarEncrypt(plainText, shift)
+# write a caesarDecrypt(cipherText, shift)
