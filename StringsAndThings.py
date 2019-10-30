@@ -112,6 +112,17 @@ print(indexToLetter(10))
 
 from Crypto import *
 
+print
+
 print(scramble2Encrypt("GOOD MORNING LADIES AND GENTLEMEN"))
 
 print(scramble2Decrypt("ODMRIGLDE N ETEEGO ONN AISADGNLMN"))
+
+
+def StripSpace(text):
+        return text.replace(" ", "")
+
+print(StripSpace("HI I AM A PERSON"))
+print(scramble2Encrypt("HI I AM A PERSON"))
+print(StripSpace("IIA  ESNH  MAPRO"))
+print(scramble2Decrypt("IIA  ESNH  MAPRO"))
