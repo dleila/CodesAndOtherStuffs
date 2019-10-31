@@ -119,10 +119,13 @@ print(scramble2Encrypt("GOOD MORNING LADIES AND GENTLEMEN"))
 print(scramble2Decrypt("ODMRIGLDE N ETEEGO ONN AISADGNLMN"))
 
 
-def StripSpace(text):
-        return text.replace(" ", "")
+def stripSpace(text):
+    return text.replace(" ", "")
 
-print(StripSpace("HI I AM A PERSON"))
+print(stripSpace("HI I AM A PERSON"))
 print(scramble2Encrypt("HI I AM A PERSON"))
-print(StripSpace("IIA  ESNH  MAPRO"))
+print(stripSpace("IIA  ESNH  MAPRO"))
 print(scramble2Decrypt("IIA  ESNH  MAPRO"))
+
+print(caesarEncrypt("I AM A BAKED POTATO", 4))
+print(caesarDecrypt("MEQEFEOIHTSXEXS", 4))
