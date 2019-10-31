@@ -2,6 +2,8 @@
 
 # original: this_is_a_secret_message_that_i_want_to_transmit
 # encrypted:hsi__ertmsaeta__att_rnmtti_sasce_esg_htiwn_otasi
+from typing import Any, Union
+
 
 def scramble2Encrypt(plainText):
     evenChars = ""
@@ -38,9 +40,31 @@ def encryptMessage():
     print("The encrypted message is:", cipherText)
 
 # write a stripSpaces(text) function here
-
 def stripSpace(s):
     s.replace(" ", "")
 
 # write a caesarEncrypt(plainText, shift)
+def caesarEncrypt(plainText, shift):
+  cipherText = ""
+  for ch in plainText:
+    if ch.isalpha():
+      stayInAlphabet = ord(ch) + shift
+      if stayInAlphabet > ord('z'):
+        stayInAlphabet -= 26
+      finalLetter = chr(stayInAlphabet)
+      cipherText += finalLetter
+
+  return cipherText
+
 # write a caesarDecrypt(cipherText, shift)
+def caesarDecrypt(cipherText, shift):
+    plainText = ""
+    for ch in cipherText:
+        if ch.isalpha():
+            stayInAlphabet = ord(ch) + shift
+            if stayInAlphabet > ord('z'):
+                stayInAlphabet -= 26
+            finalLetter = chr(stayInAlphabet)
+            plainText += finalLetter
+
+    return plainText
