@@ -112,8 +112,6 @@ print(indexToLetter(10))
 
 from Crypto import *
 
-print
-
 print(scramble2Encrypt("GOOD MORNING LADIES AND GENTLEMEN"))
 
 print(scramble2Decrypt("ODMRIGLDE N ETEEGO ONN AISADGNLMN"))
@@ -127,5 +125,39 @@ print(scramble2Encrypt("HI I AM A PERSON"))
 print(stripSpace("IIA  ESNH  MAPRO"))
 print(scramble2Decrypt("IIA  ESNH  MAPRO"))
 
-print(caesarEncrypt("I AM A BAKED POTATO", 4))
-print(caesarDecrypt("MEQEFEOIHTSXEXS", 4))
+key = 'abcdefghijklmnopqrstuvwxyz'
+
+def encrypt(n, plaintext):
+    """Encrypt the string and return the Ciphertext"""
+    result = ''
+
+    for l in plaintext.lower():
+        try:
+            i = (key.index(l) + n) % 26
+            result += key[i]
+        except ValueError:
+            result += l
+
+    return result.lower()
+
+
+text = "i am a baked potato"
+offset = 5
+encrypted = encrypt(offset, text)
+print(encrypted)
+
+# write a caesarDecrypt(cipherText, shift)
+def decrypt(n, ciphertext):
+    result = ''
+
+    for l in ciphertext:
+        try:
+            i = (key.index(l) - n) % 26
+            result += key[i]
+        except ValueError:
+            result += l
+
+    return result
+
+decrypted = decrypt(offset, encrypted)
+print(decrypted)
