@@ -43,28 +43,35 @@ def encryptMessage():
 def stripSpace(s):
     s.replace(" ", "")
 
-# write a caesarEncrypt(plainText, shift)
-def caesarEncrypt(plainText, shift):
-  cipherText = ""
-  for ch in plainText:
-    if ch.isalpha():
-      stayInAlphabet = ord(ch) + shift
-      if stayInAlphabet > ord('z'):
-        stayInAlphabet -= 26
-      finalLetter = chr(stayInAlphabet)
-      cipherText += finalLetter
+# encrypt and decrypt a text using a simple algorithm of offsetting the letters
 
-  return cipherText
+# write a caesarEncrypt(plainText, shift)
+def caesarEncrypt(plainText):
+    evenChars = ""
+    oddChars = ""
+    charCount = 0
+    for ch in plainText:
+        if charCount % 2 == 0:
+            evenChars = evenChars + ch
+        else:
+            oddChars = oddChars + ch
+        charCount = charCount + 1
+    cipherText = oddChars + evenChars
+    return cipherText
 
 # write a caesarDecrypt(cipherText, shift)
-def caesarDecrypt(cipherText, shift):
+
+def caesarDecrypt(ciphertext):
+    halfLength = len(ciphertext // 2)
+    evenChars = ciphertext[halfLength:]
+    oddChars = ciphertext[:halfLength]
     plainText = ""
-    for ch in cipherText:
-        if ch.isalpha():
-            stayInAlphabet = ord(ch) + shift
-            if stayInAlphabet > ord('z'):
-                stayInAlphabet -= 26
-            finalLetter = chr(stayInAlphabet)
-            plainText += finalLetter
+
+    for i in range(halfLength):
+        plainText = plainText + evenChars[i]
+        plainText = plainText + oddChars[i]
+
+    if len(oddChars) < len(evenChars):
+        plainText = plainText + evenChars[-1]
 
     return plainText
